@@ -172,7 +172,7 @@
       <div class="welcome">
         <div class="bubble">Welcome!</div>
         ${usa("usa-xl bob")}
-        <h1 class="brand">to <span>Tabi</span> <small>旅</small></h1>
+        <h1 class="brand">to <span>Tabibito</span> <small>旅人</small></h1>
         <p class="lead">Your little Japan travel buddy. Plans, ideas and a wish list, all in one place.</p>
         <form class="card form" id="welcome-form">
           <label>What should I call you?
@@ -987,7 +987,7 @@ Check in: Hotel Gracery (3 nights)</pre>
           <button type="button" class="btn ghost danger-text" data-clear-items>Clear itinerary</button>
           <button type="button" class="btn ghost danger-text" data-reset>Reset everything</button>
         </div>
-        <p class="fine center">Made with 💖 for your trip · 旅</p>
+        <p class="fine center">Made with 💖 for your trip · 旅人</p>
       </form>`);
     const form = $("#settings", s.el);
     form.onsubmit = (e) => {
@@ -1001,7 +1001,7 @@ Check in: Hotel Gracery (3 nights)</pre>
       const blob = new Blob([JSON.stringify(S, null, 2)], { type: "application/json" });
       const a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = `tabi-backup-${todayISO()}.json`;
+      a.download = `tabibito-backup-${todayISO()}.json`;
       document.body.appendChild(a); a.click(); a.remove();
       setTimeout(() => URL.revokeObjectURL(a.href), 2000);
     };
@@ -1011,7 +1011,7 @@ Check in: Hotel Gracery (3 nights)</pre>
         const data = JSON.parse(await f.text());
         if (!data || !Array.isArray(data.items)) throw new Error();
         S = Object.assign(blank(), data); save(); s.close(); rerender(); toast("Backup restored 🎉");
-      } catch (err) { toast("That doesn't look like a Tabi backup file."); }
+      } catch (err) { toast("That doesn't look like a Tabibito backup file."); }
     };
     $("[data-clear-items]", s.el).onclick = () => confirmSheet("Delete every plan in the itinerary?", "Clear it", () => { S.items = []; save(); s.close(); rerender(); toast("Itinerary cleared"); });
     $("[data-reset]", s.el).onclick = () => confirmSheet("Reset everything? This deletes all plans and to-dos.", "Reset", () => { S = blank(); save(); closeAllSheets(); location.hash = ""; route(); });

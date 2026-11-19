@@ -1,5 +1,5 @@
 /* Offline support: the app keeps working without signal in Japan. */
-const CACHE = "tabi-v3";
+const CACHE = "tabi-v4";
 const SHELL = [
   "./", "./index.html", "./css/styles.css",
   "./js/app.js", "./js/activities.js", "./js/importer.js",

@@ -1,4 +1,4 @@
-# Tabi 旅 · Japan trip companion
+# Tabibito 旅人 · Japan trip companion
 
 A small phone app for a trip to Japan. It has four tabs:
 
