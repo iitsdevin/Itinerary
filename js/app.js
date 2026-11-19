@@ -172,7 +172,7 @@
       <div class="welcome">
         <div class="bubble">Welcome!</div>
         ${usa("usa-xl bob")}
-        <h1 class="brand">to <span>Tabibito</span> <small>旅人</small></h1>
+        <h1 class="brand"><span>Tabibito</span> <small>旅人</small></h1>
         <p class="lead">Your little Japan travel buddy. Plans, ideas and a wish list, all in one place.</p>
         <form class="card form" id="welcome-form">
           <label>What should I call you?
