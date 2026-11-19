@@ -83,7 +83,7 @@
     copy: '<svg viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path d="M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"/></svg>',
     sparkle: '<svg viewBox="0 0 24 24"><path d="M12 3.5c.6 4.4 2.5 6.6 7 7.5-4.5.9-6.4 3.1-7 7.5-.6-4.4-2.5-6.6-7-7.5 4.5-.9 6.4-3.1 7-7.5z"/></svg>',
   };
-  const usa = (cls = "") => `<svg class="usa ${cls}" viewBox="0 0 120 120" aria-hidden="true"><use href="#usa"/></svg>`;
+  const usa = (cls = "") => `<svg class="usa ${cls}" viewBox="0 0 120 120" aria-hidden="true"><use href="#mascot"/></svg>`;
 
   /* ================= toast ================= */
   let toastTimer;
@@ -329,7 +329,7 @@
 
       <div class="divider"><span>Training ground</span></div>
       <section class="card spin-card">
-        <div class="spin-art">${usa("usa-md tilt")}</div>
+        <div class="spin-art">${usa("usa-md")}</div>
         <div>
           <h3>Feeling spontaneous?</h3>
           <p class="muted">${CITIES.reduce((n, c) => n + c.acts.length, 0)} ideas across ${CITIES.length} places</p>
@@ -694,7 +694,7 @@ Check in: Hotel Gracery (3 nights)</pre>
     const pool = filteredActs(city);
     $("#view").innerHTML = `
       <header class="page-head">
-        <div><h1>Explore</h1><p class="muted">Can't decide? Let Usa pick for you!</p></div>
+        <div><h1>Explore</h1><p class="muted">Can't decide? Let Momo pick for you!</p></div>
       </header>
       <div class="city-strip" id="city-strip">
         ${CITIES.map((c) => `<button class="city-chip ${c.id === city.id ? "active" : ""}" data-city="${c.id}"><span class="ce">${c.emoji}</span><span>${esc(c.name)}</span></button>`).join("")}
