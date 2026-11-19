@@ -275,7 +275,11 @@
   }
 
   /* ================= HOME ================= */
-  const GREETINGS = ["Ohayō! ☀️", "Let's go adventuring!", "Ganbatte! 💪", "Snack break? 🍡", "Remember to drink water!", "Mata ne! 👋", "Konnichiwa!", "Ikuzo! 🚄"];
+  const GREETINGS = {
+    morning: ["Ohayō! ☀️", "Rise and shine! 🌸", "Breakfast first? 🍙", "Let's go adventuring!", "Ikuzo! 🚄"],
+    day: ["Let's go adventuring!", "Ganbatte! 💪", "Snack break? 🍡", "Remember to drink water!", "Ikuzo! 🚄"],
+    evening: ["Otsukaresama! 🍵", "Ramen time? 🍜", "Onsen o'clock ♨️", "What a day! ✨", "Oyasumi soon 🌙"],
+  };
   function renderHome() {
     const p = S.profile, t = todayISO();
     const nu = nextUp();
@@ -289,7 +293,8 @@
     const daysDone = inTrip ? dayNum(t) : (p.end && t > p.end ? tl : 0);
     const hour = new Date().getHours();
     const hello = hour < 11 ? "Ohayō" : hour < 17 ? "Konnichiwa" : "Konbanwa";
-    const greet = GREETINGS[Math.floor(Math.random() * GREETINGS.length)];
+    const pool = GREETINGS[hour < 11 ? "morning" : hour < 17 ? "day" : "evening"];
+    const greet = pool[Math.floor(Math.random() * pool.length)];
 
     $("#view").innerHTML = `
       <header class="topbar">
