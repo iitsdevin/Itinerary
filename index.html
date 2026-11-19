@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tabi · Japan Trip</title>
+  <meta name="description" content="A cute little Japan travel companion: itinerary, ideas and to-dos.">
+  <meta name="theme-color" content="#FDF4EA">
+  <meta name="color-scheme" content="light">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Tabi">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preload" href="fonts/baloo-2-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Reusable drawings -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- Usa, the yuki-usagi (snow bunny) mascot -->
+      <symbol id="usa" viewBox="0 0 120 120">
+        <ellipse cx="60" cy="108" rx="40" ry="6" fill="#5A4038" opacity=".08"/>
+        <path d="M44 34c-10-14-8-30 2-31 9-1 12 16 8 32z" fill="#A9C47F" stroke="#5A4038" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M47 30c-3-8-3-16 0-21" stroke="#7E9A55" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M70 35c4-16 14-28 22-24 8 5-2 20-14 29z" fill="#A9C47F" stroke="#5A4038" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M74 32c4-7 9-13 14-16" stroke="#7E9A55" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M14 78c0-26 20-44 46-44s46 18 46 44c0 18-16 28-46 28S14 96 14 78z" fill="#FFFDF9" stroke="#5A4038" stroke-width="2.5"/>
+        <path d="M26 88c6 8 18 11 34 11" stroke="#EADFD3" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <ellipse cx="44" cy="70" rx="4.2" ry="5" fill="#5A4038"/>
+        <ellipse cx="76" cy="70" rx="4.2" ry="5" fill="#5A4038"/>
+        <circle cx="45.5" cy="68" r="1.4" fill="#fff"/>
+        <circle cx="77.5" cy="68" r="1.4" fill="#fff"/>
+        <ellipse cx="34" cy="80" rx="7" ry="4.5" fill="#FBBBB1" opacity=".85"/>
+        <ellipse cx="86" cy="80" rx="7" ry="4.5" fill="#FBBBB1" opacity=".85"/>
+        <path d="M54 78c2 4 10 4 12 0" stroke="#5A4038" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <circle cx="62" cy="38" r="4" fill="#E5604E" stroke="#5A4038" stroke-width="1.5"/>
+        <circle cx="61" cy="37" r="1" fill="#fff" opacity=".8"/>
+      </symbol>
+      <!-- Mountain + hills scene -->
+      <symbol id="scene" viewBox="0 0 400 160" preserveAspectRatio="xMidYMax slice">
+        <path d="M120 150 L215 42 Q222 34 229 42 L330 150 Z" fill="#4A90C2"/>
+        <path d="M215 42 Q222 34 229 42 L250 66 L240 61 L232 70 L222 60 L212 70 L204 62 L196 66 Z" fill="#fff"/>
+        <path d="M150 150 L235 52 L260 150 Z" fill="#3F7FB0" opacity=".35"/>
+        <path d="M-10 150 L60 92 Q66 87 72 92 L150 150 Z" fill="#9CC6E6"/>
+        <path d="M290 150 L350 100 Q356 95 362 100 L420 150 Z" fill="#9CC6E6"/>
+        <path d="M-10 160 V120 Q40 100 90 116 T190 112 T300 118 T410 108 V160 Z" fill="#B5D6B2"/>
+        <path d="M-10 160 V134 Q50 118 120 132 T250 130 T410 126 V160 Z" fill="#94C09A"/>
+        <path d="M30 128 q4-8 8 0 M44 126 q3-6 6 0 M330 124 q4-8 8 0 M344 122 q3-6 6 0" stroke="#6E9E77" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div id="app">
+    <main id="view" tabindex="-1"></main>
+    <nav class="tabbar" aria-label="Main">
+      <a href="#home" data-tab="home">
+        <svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9.5h13V10"/><path d="M10 19.5v-5h4v5"/></svg>
+        <span>Home</span>
+      </a>
+      <a href="#itinerary" data-tab="itinerary">
+        <svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M8 14h3M8 17h6"/></svg>
+        <span>Itinerary</span>
+      </a>
+      <a href="#explore" data-tab="explore">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>
+        <span>Explore</span>
+      </a>
+      <a href="#todo" data-tab="todo">
+        <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="m8 12 2.6 2.6L16 9.2"/></svg>
+        <span>To-do</span>
+      </a>
+    </nav>
+  </div>
+
+  <div id="sheet-root"></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/activities.js"></script>
+  <script src="js/importer.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
