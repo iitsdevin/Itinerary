@@ -1022,7 +1022,7 @@ Check in: Hotel Gracery (3 nights)</pre>
   // refresh "up next" countdown every minute on home
   setInterval(() => { if (!sheetStack.length && S.onboarded && (location.hash === "#home" || !location.hash)) renderHome(); }, 60000);
 
-  if ("serviceWorker" in navigator && location.protocol === "https:") {
+  if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
     window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
   }
 })();
